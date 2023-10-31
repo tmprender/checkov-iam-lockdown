@@ -19,4 +19,10 @@ Collection of custom checkov policies to prevent IAM changes via Terraform
     `checkov -d example/ --external-checks-git https://github.com/tmprender/checkov-iam-lockdown/aws`
 
 ## Next steps
-Configure separate pipeline to manage IAM changes.
+Configure separate pipeline to manage IAM changes. Essentially...
+
+*check for iam changes in tf plan:*
+
+`terraform show -json tfplan.plan | jq '.planned_values.root_module.resources[] | select(.type | contains ("iam"))'`
+
+and forward the resulting output to a meaningful location.
