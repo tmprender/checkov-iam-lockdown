@@ -1,0 +1,22 @@
+metadata:
+  name: "Prevent IAM Resource Changes"
+  category: "IAM"
+  description: "Ensures that no IAM resource changes are present in Terraform code"
+  id: "CKV_AWS_CUSTOM_IAM_001"
+definition:
+  cond_type: "attribute"
+  attribute: "any"
+  resource_types:
+    - "aws_iam_user"
+    - "aws_iam_group"
+    - "aws_iam_role"
+    - "aws_iam_policy"
+    - "aws_iam_instance_profile"
+    - "aws_iam_access_key"
+    - "aws_iam_user_policy"
+    - "aws_iam_user_policy_attachment"
+    - "aws_iam_group_policy"
+    - "aws_iam_group_policy_attachment"
+    - "aws_iam_role_policy"
+    - "aws_iam_role_policy_attachment"      
+  operator: "exists"
