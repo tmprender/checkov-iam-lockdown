@@ -1,5 +1,5 @@
 metadata:
-  name: "Prevent IAM Resource Changes"
+  name: "Terraform contains AWS IAM Resource Changes"
   category: "IAM"
   description: "Ensures that no IAM resource changes are present in Terraform code"
   id: "CKV_AWS_CUSTOM_IAM_001"
